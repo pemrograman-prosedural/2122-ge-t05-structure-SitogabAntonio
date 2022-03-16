@@ -11,7 +11,6 @@ enum Gender {
     FEMALE
 };
 
-
 typedef struct SMahasiswa Mahasiswa;
 struct SMahasiswa {
     char nama[50];

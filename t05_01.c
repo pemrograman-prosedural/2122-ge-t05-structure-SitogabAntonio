@@ -35,7 +35,7 @@ int main(void) {
         return 0;
     }
 
-    
+
     char stringData[1024];
     Mahasiswa listMahasiswa[50];    
     int jlhMale = 0, jlhFemale = 0;         
