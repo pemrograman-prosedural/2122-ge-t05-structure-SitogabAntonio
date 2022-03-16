@@ -1,0 +1,84 @@
+{
+  "tests": [
+    {
+      "name": "t05-01-01",
+      "setup": "make compile",
+      "run": "make -s test_01",
+      "input": "register\r\nIshak|11S17055|2017|MALE\r\nAnna|11418020|2018|FEMALE\r\nRisa|11418044|2018|FEMALE\r\nFitri|11S19020|2019|FEMALE\r\n---\r\n",
+      "output": "1|3\r\n",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "t05-01-02",
+      "setup": "make compile",
+      "run": "make -s test_01",
+      "input": "---\r\n",
+      "output": "0|0\r\n",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "t05-01-03",
+      "setup": "make compile",
+      "run": "make -s test_01",
+      "input": "register\r\nIshak|11S17055|2017|MALE\r\nJhon|11420020|2020|MALE\r\nLeonardo|12S12144|2021|MALE\r\n---\r\n",
+      "output": "3|0\r\n",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "t05-01-04",
+      "setup": "make compile",
+      "run": "make -s test_01",
+      "input": "register\r\nYolanda|11S2020|2020|FEMALE\r\nSri|12S21012|2021|FEMALE\r\n---\r\n",
+      "output": "0|2\r\n",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "t05-02-01",
+      "setup": "make compile",
+      "run": "make -s test_02",
+      "input": "---\r\n",
+      "output": "0|0\r\n",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 15
+    },
+    {
+      "name": "t05-02-02",
+      "setup": "make compile",
+      "run": "make -s test_02",
+      "input": "register\r\nIshak|11S17055|2017|MALE\r\nJhon|11420020|2020|MALE\r\nLeonardo|12S12144|2021|MALE\r\nSari|12S16023|2016|FEMALE\r\n---\r\n",
+      "output": "3|1\r\nIshak|Jhon|Leonardo|\r\nSari|\r\n\r\n",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 15
+    },
+    {
+      "name": "t05-02-03",
+      "setup": "make compile",
+      "run": "make -s test_02",
+      "input": "register\r\nVinny|12S16023|2016|FEMALE\r\n---",
+      "output": "0|1\r\nVinny|\r\n",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 15
+    },
+    {
+      "name": "t05-02-04",
+      "setup": "make compile",
+      "run": "make -s test_02",
+      "input": "register\r\nVictor|11S2020|2020|MALE\r\nBoy|12S21012|2021|MALE\r\n---\r\n",
+      "output": "2|0\r\nVictor|Boy|\r\n",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 15
+    }
+  ]
+}
